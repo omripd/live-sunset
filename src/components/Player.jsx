@@ -6,6 +6,13 @@ class player extends Component {
         url: 'https://edge08.nginx.hdontap.com/ho3/elporto_swellmagnet.stream/chunklist.m3u8'
     }
 
+    componentDidMount() {
+        this.interval = setInterval(() => this.setState({ time: Date.now() }), 5000);
+    }
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
     renderLoadButton = (url, label) => {
         return (
             <button onClick={() => this.load(url)}>
@@ -13,9 +20,9 @@ class player extends Component {
             </button>
         )
     }
-    load = url => {
+    load = (url) => {
         this.setState({
-            url
+            url: url
         })
     }
 
