@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-import ReactHlsPlayer from 'react-hls-player';
+import Aux from './hoc/Aux.jsx';
+import Header from './components/Header.jsx';
+import Player from './components/Player.jsx';
+
 
 class App extends Component {
   render() {
     return (
-      <ReactHlsPlayer
-        url='https://s5.ipcamlive.com/streams/055fda518ee94a6c0/stream.m3u8'
-        autoplay={false}
-        controls={true}
-        width={500}
-        height={375}
-    />
+      <Aux>
+        <Header />
+        <Player />
+      </Aux>
     );
   }
 }
