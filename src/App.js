@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Aux from './hoc/Aux.jsx';
 import Header from './components/Header.jsx';
 import Player from './components/Player.jsx';
+import Sheet from './lib/helper';
 
 
 class App extends Component {
@@ -11,6 +12,7 @@ class App extends Component {
       <Aux>
         <Header />
         <Player />
+        <Sheet />
       </Aux>
     );
   }
